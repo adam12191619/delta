@@ -121,7 +121,12 @@ class MainDashboard extends StatelessWidget {
                 mainAxisSpacing: 20,
                 crossAxisSpacing: 20,
                 children: [
-                  _buildToolCard("Port Scanner", Icons.radar, Colors.blue),
+                  GestureDetector(
+  onTap: () {
+    Navigator.push(context, MaterialPageRoute(builder: (context) => PortScannerScreen()));
+  },
+  child: _buildToolCard("Port Scanner", Icons.radar, Colors.blue),
+),
                   _buildToolCard("Network Map", Icons.hub_outlined, Colors.purple),
                   _buildToolCard("Device Info", Icons.developer_mode, Colors.green),
                   _buildToolCard("Exif Remover", Icons.no_photography_outlined, Colors.orange),
